@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 ---
 
 <header
+    id="main-header"
     class="fixed w-full top-0 z-50 transition-all duration-300 bg-background-base/80 backdrop-blur-md border-b border-primary/5"
 >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,22 +56,129 @@ import { Image } from "astro:assets";
                 </a>
             </nav>
 
-            <!-- Mobile Menu Button (Hamburger) - Placeholder for interactivity -->
-            <button class="md:hidden p-2 text-text-main hover:text-accent">
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button
+                id="mobile-menu-button"
+                class="md:hidden p-2 text-text-main hover:text-accent z-50 relative group w-10 h-10 flex flex-col justify-center items-center gap-1.5"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                data-state="closed"
+            >
                 <span class="sr-only">Menu openen</span>
-                <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+                <span
+                    class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out group-data-[state=open]:rotate-45 group-data-[state=open]:translate-y-2"
+                ></span>
+                <span
+                    class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out group-data-[state=open]:opacity-0"
+                ></span>
+                <span
+                    class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out group-data-[state=open]:-rotate-45 group-data-[state=open]:-translate-y-2"
+                ></span>
             </button>
         </div>
     </div>
 </header>
+
+<!-- Mobile Menu Panel -->
+<div
+    id="mobile-menu"
+    class="md:hidden fixed inset-0 top-0 bg-background-base/90 backdrop-blur-xl z-40 transition-all duration-300 ease-in-out opacity-0 invisible -translate-y-2"
+>
+    <!-- Use justify-start and pt-48 to push content solidly below the header -->
+    <nav
+        class="flex flex-col items-center justify-start h-full space-y-8 pt-48 pb-8"
+    >
+        <a
+            href="/"
+            class="text-lg font-medium text-text-main hover:text-accent transition-colors"
+            >Home</a
+        >
+        <a
+            href="/over-ons"
+            class="text-lg font-medium text-text-main hover:text-accent transition-colors"
+            >Over Ons</a
+        >
+        <a
+            href="/diensten"
+            class="text-lg font-medium text-text-main hover:text-accent transition-colors"
+            >Diensten</a
+        >
+        <a
+            href="/portfolio"
+            class="text-lg font-medium text-text-main hover:text-accent transition-colors"
+            >Portfolio</a
+        >
+        <a
+            href="/contact"
+            class="inline-flex items-center justify-center px-8 py-3 border border-primary/10 text-base font-medium rounded-sm text-white bg-primary hover:bg-primary-light transition-all duration-300 shadow-sm hover:shadow-md"
+        >
+            Vrijblijvend advies
+        </a>
+    </nav>
+</div>
+
+<script>
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    const toggleMenu = () => {
+        const isHidden = mobileMenu?.classList.contains("invisible");
+
+        if (isHidden) {
+            // Open
+            mobileMenu?.classList.remove(
+                "opacity-0",
+                "invisible",
+                "-translate-y-2",
+            );
+            mobileMenu?.classList.add(
+                "opacity-100",
+                "visible",
+                "translate-y-0",
+            );
+
+            menuButton?.setAttribute("data-state", "open");
+            document.body.style.overflow = "hidden";
+            menuButton?.setAttribute("aria-expanded", "true");
+        } else {
+            // Close
+            mobileMenu?.classList.add(
+                "opacity-0",
+                "invisible",
+                "-translate-y-2",
+            );
+            mobileMenu?.classList.remove(
+                "opacity-100",
+                "visible",
+                "translate-y-0",
+            );
+
+            menuButton?.setAttribute("data-state", "closed");
+            document.body.style.overflow = "";
+            menuButton?.setAttribute("aria-expanded", "false");
+        }
+    };
+
+    menuButton?.addEventListener("click", toggleMenu);
+
+    // Close menu when clicking a link
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            // Force close logic
+            mobileMenu?.classList.add(
+                "opacity-0",
+                "invisible",
+                "-translate-y-2",
+            );
+            mobileMenu?.classList.remove(
+                "opacity-100",
+                "visible",
+                "translate-y-0",
+            );
+
+            menuButton?.setAttribute("data-state", "closed");
+            document.body.style.overflow = "";
+            menuButton?.setAttribute("aria-expanded", "false");
+        });
+    });
+</script>
