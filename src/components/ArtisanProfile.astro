@@ -11,11 +11,13 @@ import { FadeIn } from "./ui/FadeIn";
                     class="relative aspect-[3/4] overflow-hidden rounded-sm shadow-2xl"
                 >
                     <!-- Placeholder for Dave Visser Portrait -->
-                    <div
-                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                        style="background-image: url('/rembrandt.webp');"
-                    >
-                    </div>
+                    <img
+                        src="/rembrandt.webp"
+                        alt="Dave Visser - Meesterschilder en eigenaar van Schildersbedrijf Visser in de Betuwe"
+                        loading="lazy"
+                        decoding="async"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
                     <div class="absolute inset-0 bg-primary/10"></div>
                 </div>
                 <!-- Decorative Element -->

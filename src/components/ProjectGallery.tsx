@@ -63,9 +63,12 @@ export default function ProjectGallery({ projects }: ProjectGalleryProps) {
                                 href={`/portfolio/${project.slug}`}
                                 className={`group relative overflow-hidden rounded-sm cursor-pointer block h-full ${project.size || "col-span-1 row-span-1"}`}
                             >
-                                <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                    style={{ backgroundImage: `url('${project.image}')` }}
+                                <img
+                                    src={project.image}
+                                    alt={`${project.title} - ${project.category} project door Schildersbedrijf Visser`}
+                                    loading="eager"
+                                    decoding="async"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
 
