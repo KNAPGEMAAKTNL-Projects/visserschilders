@@ -26,7 +26,13 @@ const services = allServices.slice(0, 4).map(service => ({
         <FadeIn client:visible delay={index * 0.1} className="h-full">
             <a href={service.link} class="group relative aspect-[16/9] md:aspect-[3/2] overflow-hidden rounded-sm block shadow-md hover:shadow-2xl transition-all duration-500 h-full">
             <!-- Background Image -->
-            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={`background-image: url('${service.image}');`}></div>
+            <img
+                src={service.image}
+                alt={`${service.title} - professioneel schilderwerk door Schildersbedrijf Visser`}
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
             
             <!-- Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
