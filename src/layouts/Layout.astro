@@ -18,8 +18,12 @@ const {
 } = Astro.props;
 
 // Generate optimized hero images for preload
-const heroMobile = isHomepage ? await getImage({ src: heroImage, width: 480, format: "webp" }) : null;
-const heroTablet = isHomepage ? await getImage({ src: heroImage, width: 768, format: "webp" }) : null;
+const heroMobile = isHomepage
+	? await getImage({ src: heroImage, width: 480, format: "webp" })
+	: null;
+const heroTablet = isHomepage
+	? await getImage({ src: heroImage, width: 768, format: "webp" })
+	: null;
 ---
 
 <!doctype html>
@@ -31,19 +35,18 @@ const heroTablet = isHomepage ? await getImage({ src: heroImage, width: 768, for
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<!-- Preload fonts to avoid CSS chain delay -->
-		<link rel="preload" href="/_astro/inter-latin-wght-normal.Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/_astro/playfair-display-latin-wght-normal.BOwq7MWX.woff2" as="font" type="font/woff2" crossorigin />
-		{isHomepage && heroMobile && heroTablet && (
-			<link
-				rel="preload"
-				as="image"
-				href={heroMobile.src}
-				imagesrcset={`${heroMobile.src} 480w, ${heroTablet.src} 768w`}
-				imagesizes="(max-width: 1023px) 100vw, 50vw"
-				fetchpriority="high"
-			/>
-		)}
+		{
+			isHomepage && heroMobile && heroTablet && (
+				<link
+					rel="preload"
+					as="image"
+					href={heroMobile.src}
+					imagesrcset={`${heroMobile.src} 480w, ${heroTablet.src} 768w`}
+					imagesizes="(max-width: 1023px) 100vw, 50vw"
+					fetchpriority="high"
+				/>
+			)
+		}
 	</head>
 	<body
 		class="bg-background-base text-text-main antialiased selection:bg-accent selection:text-white"
