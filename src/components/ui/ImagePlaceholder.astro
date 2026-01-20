@@ -1,0 +1,48 @@
+---
+interface Props {
+    text?: string;
+    className?: string;
+}
+
+const { text = "Image Placeholder", className = "" } = Astro.props;
+---
+
+<div
+    class={`bg-background-base relative overflow-hidden flex items-center justify-center p-8 border border-primary/5 ${className}`}
+>
+    <!-- Architectural Cross Lines -->
+    <svg
+        class="absolute inset-0 w-full h-full text-primary/5"
+        preserveAspectRatio="none"
+        viewBox="0 0 100 100"
+    >
+        <line
+            x1="0"
+            y1="0"
+            x2="100"
+            y2="100"
+            vector-effect="non-scaling-stroke"
+            stroke="currentColor"
+            stroke-width="1"></line>
+        <line
+            x1="100"
+            y1="0"
+            x2="0"
+            y2="100"
+            vector-effect="non-scaling-stroke"
+            stroke="currentColor"
+            stroke-width="1"></line>
+    </svg>
+
+    <!-- Inner Border Frame -->
+    <div class="absolute inset-4 border border-dashed border-primary/10"></div>
+
+    <!-- Label -->
+    <div
+        class="relative z-10 bg-white/80 backdrop-blur-sm px-4 py-2 border border-primary/10 rounded-sm"
+    >
+        <span class="font-serif text-primary/60 text-sm italic tracking-wide">
+            {text}
+        </span>
+    </div>
+</div>

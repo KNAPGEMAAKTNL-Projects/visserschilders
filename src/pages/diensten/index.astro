@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { services } from "../../data/services";
+---
+
+<Layout title="Diensten | Schildersbedrijf Visser">
+    <section class="pt-32 pb-16 bg-background-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span
+                class="text-accent uppercase tracking-widest text-xs font-semibold mb-6 block"
+                >Diensten</span
+            >
+            <h1 class="font-serif text-4xl lg:text-5xl text-primary mb-6">
+                Expertise in elk detail.
+            </h1>
+            <p class="text-text-muted text-lg max-w-2xl mx-auto">
+                Wij bieden een compleet pakket aan schilder- en
+                afwerkingsdiensten voor particulieren die kwaliteit waarderen.
+            </p>
+        </div>
+    </section>
+
+    <section class="pb-24 bg-background-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-24">
+                {
+                    services.map((service, index) => (
+                        <div
+                            class={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                        >
+                            <div class="w-full md:w-1/2 group relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl">
+                                <img
+                                    src={service.image}
+                                    alt={service.title}
+                                    width="800"
+                                    height="600"
+                                    class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors" />
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <h2 class="font-serif text-3xl text-primary mb-4">
+                                    {service.title}
+                                </h2>
+                                <p class="text-text-muted text-lg leading-relaxed mb-8">
+                                    {service.intro}
+                                </p>
+                                <a
+                                    href={`/diensten/${service.slug}`}
+                                    class="text-primary border-b border-primary/20 pb-1 hover:text-accent hover:border-accent transition-all font-medium"
+                                >
+                                    Lees meer over {service.title.toLowerCase()}
+                                </a>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

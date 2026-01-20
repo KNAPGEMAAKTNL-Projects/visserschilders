@@ -1,0 +1,73 @@
+---
+import { FadeIn } from "./ui/FadeIn";
+---
+
+<section class="py-24 bg-background-base overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            <!-- Image / Visual -->
+            <FadeIn client:visible className="w-full md:w-1/2 relative group">
+                <div
+                    class="relative aspect-[3/4] overflow-hidden rounded-sm shadow-2xl"
+                >
+                    <!-- Placeholder for Dave Visser Portrait -->
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        style="background-image: url('/rembrandt.webp');"
+                    >
+                    </div>
+                    <div class="absolute inset-0 bg-primary/10"></div>
+                </div>
+                <!-- Decorative Element -->
+                <div
+                    class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 -z-10 rounded-full blur-2xl"
+                >
+                </div>
+            </FadeIn>
+
+            <!-- Content -->
+            <FadeIn client:visible delay={0.2} className="w-full md:w-1/2">
+                <span
+                    class="text-accent uppercase tracking-widest text-xs font-semibold mb-4 block"
+                    >De Vakman</span
+                >
+                <h2
+                    class="font-serif text-4xl lg:text-5xl text-primary mb-8 leading-tight"
+                >
+                    "Kwaliteit is geen toeval, het is een keuze."
+                </h2>
+                <div class="space-y-6 text-lg text-text-muted leading-relaxed">
+                    <p>
+                        Al ruim 30 jaar sta ik op de ladder in de Betuwe. Niet
+                        om zomaar meters te maken, maar om iets achter te laten
+                        waar ik trots op ben.
+                    </p>
+                    <p>
+                        Schilderen is voor mij meer dan verf aanbrengen; het is
+                        zorgen voor uw bezit. Het is de juiste materialen kiezen
+                        die jarenlang meegaan, en de tijd nemen voor die strakke
+                        lijn die niemand ziet, maar die u wel *voelt*.
+                    </p>
+                    <p>
+                        Als u kiest voor Schildersbedrijf Visser, kiest u niet
+                        voor de snelste weg, maar voor de beste.
+                    </p>
+                </div>
+
+                <div class="mt-10 flex items-center gap-6">
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl text-primary italic"
+                            >Dave Visser</span
+                        >
+                        <span
+                            class="text-xs uppercase tracking-wider text-text-muted"
+                            >Eigenaar & Meesterschilder</span
+                        >
+                    </div>
+                    <!-- Signature Placeholder or Badge -->
+                    <div class="h-px w-16 bg-accent/50"></div>
+                </div>
+            </FadeIn>
+        </div>
+    </div>
+</section>

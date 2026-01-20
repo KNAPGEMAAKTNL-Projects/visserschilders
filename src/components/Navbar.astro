@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+---
+
+<header
+    class="fixed w-full top-0 z-50 transition-all duration-300 bg-background-base/80 backdrop-blur-md border-b border-primary/5"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex flex-col">
+                <a href="/" class="block">
+                    <img
+                        src="/logo.webp"
+                        alt="Schildersbedrijf Visser"
+                        width="400"
+                        height="75"
+                        class="h-10 w-auto"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
+                    />
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a
+                    href="/"
+                    class="text-sm font-medium text-text-main hover:text-accent transition-colors"
+                    >Home</a
+                >
+                <a
+                    href="/over-ons"
+                    class="text-sm font-medium text-text-main hover:text-accent transition-colors"
+                    >Over Ons</a
+                >
+                <a
+                    href="/diensten"
+                    class="text-sm font-medium text-text-main hover:text-accent transition-colors"
+                    >Diensten</a
+                >
+                <a
+                    href="/portfolio"
+                    class="text-sm font-medium text-text-main hover:text-accent transition-colors"
+                    >Portfolio</a
+                >
+
+                <!-- CTA -->
+                <a
+                    href="/contact"
+                    class="inline-flex items-center justify-center px-6 py-2.5 border border-primary/10 text-sm font-medium rounded-sm text-white bg-primary hover:bg-primary-light transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                    Vrijblijvend advies
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button (Hamburger) - Placeholder for interactivity -->
+            <button class="md:hidden p-2 text-text-main hover:text-accent">
+                <span class="sr-only">Menu openen</span>
+                <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>

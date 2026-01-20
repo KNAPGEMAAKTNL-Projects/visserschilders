@@ -1,0 +1,197 @@
+---
+import { Image } from "astro:assets";
+import betereSchilder from "../assets/images/betere-schilder-erkend.webp";
+import logoWhite from "../assets/images/logo-white.webp";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-1">
+                <a href="/" class="block mb-6">
+                    <Image
+                        src={logoWhite}
+                        alt="Schildersbedrijf Visser"
+                        width={400}
+                        height={75}
+                        class="h-12 w-auto"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </a>
+                <!--
+                <h3 class="font-serif text-2xl font-semibold mb-4 text-white">
+                    Schildersbedrijf Visser.
+                </h3>
+        -->
+                <p class="text-white/60 text-sm leading-relaxed mb-6">
+                    Kwaliteit die blijft. Uw vakman in de Betuwe voor exclusief
+                    schilderwerk en wandafwerking.
+                </p>
+                <div class="flex space-x-4">
+                    <!-- Social icons placeholder -->
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-accent">Navigatie</h4>
+                <ul class="space-y-3">
+                    <li>
+                        <a
+                            href="/"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/over-ons"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >De Vakman</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Diensten</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/portfolio"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Gerealiseerd Werk</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-accent">Expertises</h4>
+                <ul class="space-y-3">
+                    <li>
+                        <a
+                            href="/diensten/binnenschilderwerk"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Binnenschilderwerk</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten/buitenschilderwerk"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Buitenschilderwerk</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten/wandafwerking"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Exclusieve Wandafwerking</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten/monumentaal"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Monumentaal Onderhoud</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten/spuitwerk"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Spuitwerk</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten/meubels-restylen"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Meubels Restylen</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diensten/verkoop-materialen"
+                            class="text-white/70 hover:text-white transition-colors text-sm"
+                            >Verkoop Verf & Materialen</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-accent">Contact</h4>
+                <address class="not-italic text-sm text-white/70 space-y-3">
+                    <p>Laageinde 11, 4191 NR Geldermalsen</p>
+                    <p>
+                        <a
+                            href="tel:+31345616182"
+                            class="hover:text-white transition-colors block"
+                            >0345 - 616 182</a
+                        >
+                        <a
+                            href="tel:+31623070327"
+                            class="hover:text-white transition-colors block"
+                            >06 - 23 07 03 27</a
+                        >
+                    </p>
+                    <p>
+                        <a
+                            href="mailto:info@visserschilders.nl"
+                            class="hover:text-white transition-colors"
+                            >info@visserschilders.nl</a
+                        >
+                    </p>
+                    <div
+                        class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between gap-4"
+                    >
+                        <div>
+                            <span
+                                class="block text-xs uppercase tracking-wider text-white/40 mb-1"
+                                >KVK</span
+                            >
+                            11061564
+                        </div>
+                        <Image
+                            src={betereSchilder}
+                            alt="Erkend Betere Schilder"
+                            width={300}
+                            height={218}
+                            class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
+                </address>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40"
+        >
+            <p>
+                &copy; {currentYear} Schildersbedrijf Visser. Alle rechten voorbehouden.
+            </p>
+
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="/privacy" class="hover:text-white transition-colors"
+                    >Privacy</a
+                >
+                <a
+                    href="/voorwaarden"
+                    class="hover:text-white transition-colors"
+                    >Algemene Voorwaarden</a
+                >
+            </div>
+        </div>
+    </div>
+</footer>
