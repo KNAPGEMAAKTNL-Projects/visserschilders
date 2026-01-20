@@ -73,9 +73,10 @@ export default function ProjectGallery({ projects }: ProjectGalleryProps) {
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
 
                                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                    <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                        <span className="text-xs uppercase tracking-wider text-accent mb-1 block">
-                                            {project.category}
+                                    <div className="translate-y-0 md:translate-y-4 opacity-100 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                        <span className="relative inline-block text-xs uppercase tracking-wider text-white mb-2">
+                                            <span className="absolute inset-0 bg-accent -skew-x-6 -rotate-1 scale-x-110 scale-y-125 rounded-sm"></span>
+                                            <span className="relative px-2 py-0.5">{project.category}</span>
                                         </span>
                                         <h3 className="text-white font-serif text-2xl">
                                             {project.title}

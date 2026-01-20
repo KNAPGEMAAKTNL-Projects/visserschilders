@@ -38,7 +38,7 @@ export const projects: Project[] = [
             "/images/photo-1523413651479-597eb2da0ad6.webp", // Brick/Window detail
             "/images/photo-1595853035070-59a39fe84de3.webp" // Wood detail
         ],
-        size: "col-span-2 row-span-2",
+        size: "md:col-span-2 md:row-span-2",
     },
     {
         title: "Detail Lakwerk Entree",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
             "/images/photo-1617806118233-18e1de247200.webp", // Clean wall/door
             "/images/photo-1560448204-e02f11c3d0e2.webp" // Staircase detail
         ],
-        size: "col-span-1 row-span-1",
+        size: "md:col-span-1 md:row-span-1",
     },
     {
         title: "Villa Tiel",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
             "/images/photo-1600607687939-ce8a6c25118c.webp", // Modern villa detail
             "/images/photo-1598928506311-c55ded91a20c.webp" // Modern exterior
         ],
-        size: "col-span-1 row-span-1",
+        size: "md:col-span-1 md:row-span-1",
     },
     {
         title: "Marmerstuc Badkamer",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
             "/images/photo-1631679706909-1844bbd07221.webp", // Modern Bath
             "/images/photo-1560185893-a55cbc8c57e8.webp" // Texture
         ],
-        size: "col-span-1 row-span-2",
+        size: "md:col-span-1 md:row-span-2",
     },
     {
         title: "Herenhuis Culemborg",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
             "/images/photo-1615529182904-14819c35db37.webp", // Living room
             "/images/photo-1595853035070-59a39fe84de3.webp" // Detail
         ],
-        size: "col-span-1 row-span-1 lg:col-span-2",
+        size: "md:col-span-1 md:row-span-1 lg:col-span-2",
     },
     {
         title: "Monumentaal Plafond",
@@ -139,6 +139,6 @@ export const projects: Project[] = [
             "/images/photo-1562663474-6cbb3eaa4d14.webp", // Ceiling detail
             "/images/photo-1560185008-b033106af5c3.webp" // Classic interior
         ],
-        size: "col-span-2 row-span-1",
+        size: "md:col-span-2 md:row-span-1",
     },
 ];
