@@ -13,8 +13,8 @@ export default {
                     white: '#FFFFFF',
                 },
                 accent: {
-                    DEFAULT: '#C5A572', // Muted Gold
-                    hover: '#B08D55',
+                    DEFAULT: '#725A3D', // Bronze Gold (WCAG AA 5:1 on light backgrounds)
+                    hover: '#5C4832',
                 },
                 text: {
                     main: '#1A202C',
