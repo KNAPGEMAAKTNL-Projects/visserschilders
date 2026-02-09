@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/KNAPGEMAAKTNL-Projects/visserschilders/compare/v1.1.0...v1.1.1) (2026-02-09)
+
+
+### Bug Fixes
+
+* add noindex meta tag to prevent search engine indexing 🐛 ([#23](https://github.com/KNAPGEMAAKTNL-Projects/visserschilders/issues/23)) ([2b7b7c6](https://github.com/KNAPGEMAAKTNL-Projects/visserschilders/commit/2b7b7c63ccad63f4c0c608eb0df7b3a668e9d7b2)), closes [#22](https://github.com/KNAPGEMAAKTNL-Projects/visserschilders/issues/22)
+
 ## [1.1.0](https://github.com/KNAPGEMAAKTNL-Projects/visserschilders/compare/v1.0.0...v1.1.0) (2026-01-20)
 
 
